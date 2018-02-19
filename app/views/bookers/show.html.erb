@@ -6,7 +6,7 @@
 
 <h4>投稿者名: <%= @post.name %> </h4>
 
-<h4>投稿日時: <%= @post.created_at %> </h4>
+<h4>投稿日時: <%= @post.created_at.to_s(:created_at) %> </h4>
 
 <p class="button">
 	<%= link_to "編集", edit_booker_path(@post) %>
