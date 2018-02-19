@@ -15,7 +15,7 @@ class BookersController < ApplicationController
   def create
   	newpost = Booker.new(post_params)
   	newpost.save
-  	redirect_to bookers_path
+  	redirect_to booker_path(newpost.id)
   end
 
   def edit
@@ -31,7 +31,7 @@ class BookersController < ApplicationController
   def destroy
   	post = Booker.find(params[:id])
   	post.destroy
-  	redirect_to bookers_path
+  	redirect_to bookers_path, notice: '削除しました'
   end
 
   private
